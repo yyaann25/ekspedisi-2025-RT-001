@@ -13,3 +13,7 @@ function tampilkanPesan(bagian) {
         notifElement.textContent = '';
     }, 5000);
 }
+// Fungsi BARU untuk menampilkan detail anggota ketika kartu diklik
+function tampilkanDetailAnggota(nama, peran) {
+    alert(`Detail Anggota:\nNama: ${nama}\nPeran: ${peran}\n\nTerima kasih sudah menjelajahi Tim Ekspedisi RT 001!`);
+}
