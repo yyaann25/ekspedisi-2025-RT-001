@@ -11,11 +11,12 @@
     <header>
         <h1>EKSPEDISI MALANG 2025</h1>
         <p>Mencetak Generasi Mandiri dan Bertanggung Jawab</p>
+        <span class="badge-kelompok">Kelompok RT 001</span>
     </header>
 
     <nav>
-        <button onclick="tampilkanPesan('Pengertian')">Pengertian Ekspedisi</button>
-        <button onclick="tampilkanPesan('Dokumentasi')">Dokumentasi</button>
+        <button onclick="document.getElementById('pengertian').scrollIntoView({ behavior: 'smooth' })">Pengertian</button>
+        <button onclick="document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' })">Dokumentasi</button>
         <button onclick="document.getElementById('anggota-kelompok').scrollIntoView({ behavior: 'smooth' })">Anggota Kelompok</button>
     </nav>
 
@@ -56,37 +57,92 @@
             
         </div>
     </section>
-
+    
     <hr>
     
     <section id="anggota-kelompok" class="konten-seksi">
         <h2>👥 Anggota Kelompok RT 001</h2>
         <p class="kelompok-info">Kami adalah Kelompok RT 001, tim yang bertanggung jawab penuh atas perencanaan, pelaksanaan, dan dokumentasi Ekspedisi Malang 2025.</p>
 
+        <h3>Anggota Inti (Siswa)</h3>
         <div class="kartu-anggota-container">
             
             <div class="kartu-anggota">
                 <div class="avatar-placeholder"></div>
-                <h3>[Nama Anggota 1]</h3>
-                <p class="peran">Ketua Kelompok & Perencana Rute</p>
-                <p class="kesan">"Kemandirian adalah kunci. Kami buktikan di Malang bahwa siswa kelas 9 bisa mengatur perjalanan besar ini."</p>
+                <h3>Noval</h3>
+                <p class="peran">Ketua Kelompok & Koordinator Lapangan</p>
+                <p class="kesan">"Belajar memimpin tim di lapangan adalah pengalaman terbaik untuk mengasah tanggung jawab dan kemandirian."</p>
             </div>
 
             <div class="kartu-anggota">
                 <div class="avatar-placeholder"></div>
-                <h3>[Nama Anggota 2]</h3>
-                <p class="peran">Koordinator Logistik & Keuangan</p>
-                <p class="kesan">"Belajar mengelola dana dan logistik mengajarkan arti tanggung jawab terhadap amanah yang diberikan."</p>
+                <h3>Gayan</h3>
+                <p class="peran">Anggota & Tim Dokumentasi Visual</p>
+                <p class="kesan">"Mengambil setiap momen penting untuk mengabadikan bukti kerja keras dan kebersamaan tim."</p>
             </div>
 
             <div class="kartu-anggota">
                 <div class="avatar-placeholder"></div>
-                <h3>[Nama Anggota 3]</h3>
-                <p class="peran">Dokumentator & Media Sosial</p>
-                <p class="kesan">"Setiap foto adalah cerita tentang kerja sama dan perjuangan tim. Pengalaman yang tak akan terlupakan!"</p>
+                <h3>Imad</h3>
+                <p class="peran">Anggota & Tim Logistik</p>
+                <p class="kesan">"Menjamin semua kebutuhan tim terpenuhi adalah prioritas untuk kelancaran ekspedisi."</p>
             </div>
 
+            <div class="kartu-anggota">
+                <div class="avatar-placeholder"></div>
+                <h3>Akbar</h3>
+                <p class="peran">Anggota & Bendahara Kelompok</p>
+                <p class="kesan">"Transparansi dan pengelolaan dana yang baik adalah bagian dari kemandirian dan integritas."</p>
             </div>
+            
+            <div class="kartu-anggota">
+                <div class="avatar-placeholder"></div>
+                <h3>Althaf</h3>
+                <p class="peran">Anggota & Juru Bicara</p>
+                <p class="kesan">"Berani berkomunikasi dengan warga dan pihak luar mengajarkan arti sosialisasi yang efektif."</p>
+            </div>
+            
+            <div class="kartu-anggota">
+                <div class="avatar-placeholder"></div>
+                <h3>Eshan</h3>
+                <p class="peran">Anggota & Asisten Dokumentasi</p>
+                <p class="kesan">"Membantu mencatat setiap detail kegiatan, karena setiap detail adalah pelajaran penting."</p>
+            </div>
+
+            <div class="kartu-anggota">
+                <div class="avatar-placeholder"></div>
+                <h3>Nabil</h3>
+                <p class="peran">Anggota & Tim P3K (Pertolongan Pertama)</p>
+                <p class="kesan">"Kesiapan adalah yang utama. Memastikan semua anggota tim sehat dan aman selama perjalanan."</p>
+            </div>
+
+            <div class="kartu-anggota">
+                <div class="avatar-placeholder"></div>
+                <h3>Adit</h3>
+                <p class="peran">Anggota & Pembuat Laporan</p>
+                <p class="kesan">"Mengorganisir data dan laporan menjadi hasil akhir yang komprehensif dan mudah dipahami."</p>
+            </div>
+            
+        </div>
+
+        <h3 style="margin-top: 40px; border-bottom: 2px solid #007bff; padding-bottom: 10px;">Mentor Pembimbing</h3>
+        <div class="kartu-anggota-container">
+            
+            <div class="kartu-anggota kartu-mentor">
+                <div class="avatar-placeholder avatar-mentor"></div>
+                <h3>Pak Yudha</h3>
+                <p class="peran">Mentor Pendamping Lapangan</p>
+                <p class="kesan">"Mendampingi siswa dalam proses belajar mandiri dan bertanggung jawab di lingkungan baru."</p>
+            </div>
+
+            <div class="kartu-anggota kartu-mentor">
+                <div class="avatar-placeholder avatar-mentor"></div>
+                <h3>Pak Syafiq</h3>
+                <p class="peran">Mentor Akademik & Pembekalan</p>
+                <p class="kesan">"Memastikan tujuan akademik dan nilai-nilai sekolah terserap dalam setiap kegiatan di Malang."</p>
+            </div>
+            
+        </div>
     </section>
     
     <footer>
