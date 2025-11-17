@@ -193,7 +193,21 @@ nav button:hover {
     color: #00838f; /* Biru gelap untuk peran mentor */
 }
 
+/* Styling untuk gambar avatar */
+.avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    object-fit: cover; /* Memastikan gambar mengisi lingkaran tanpa terdistorsi */
+    margin: 0 auto 15px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff; /* Warna shadow sama dengan avatar-placeholder */
+}
 
+/* Styling khusus untuk gambar avatar mentor */
+.avatar-mentor-img {
+    box-shadow: 0 0 0 3px #00bcd4; /* Warna shadow khusus untuk mentor */
+}
 /* Footer */
 footer {
     text-align: center;
@@ -208,3 +222,4 @@ footer {
     font-weight: bold;
     margin-top: 5px;
 }
+
