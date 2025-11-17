@@ -7,14 +7,12 @@ function tampilkanPesan(bagian) {
     // Menentukan pesan berdasarkan tombol yang diklik
     if (bagian === 'Pengertian') {
         pesan = 'Anda sedang melihat bagian Pengertian Ekspedisi.';
+        document.getElementById('pengertian').scrollIntoView({ behavior: 'smooth' });
     } else if (bagian === 'Dokumentasi') {
         pesan = 'Geser ke bawah untuk melihat dokumentasi foto kami!';
-        // Contoh scroll ke bagian Dokumentasi
         document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' });
-    } else if (bagian === 'Anggota') {
-        pesan = 'Maaf, bagian Anggota Kelompok belum tersedia. Segera hadir!';
     } else {
-        pesan = 'Tombol tidak dikenal.';
+        pesan = 'Anda berhasil berpindah bagian!';
     }
 
     // Menampilkan pesan pada elemen footer
