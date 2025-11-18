@@ -1,25 +1,21 @@
 function tampilkanPesan(bagian) {
     const notifElement = document.getElementById('pesan-notifikasi');
     
-    // Fungsi ini tidak lagi digunakan untuk scroll karena navigasi di HTML sudah menggunakan scrollIntoView
-    // Namun, kita tetap bisa menggunakannya untuk menampilkan notifikasi di footer
-    
     let pesan = `Anda menuju bagian ${bagian}.`;
 
     notifElement.textContent = pesan;
 
-    // Menghilangkan pesan setelah 5 detik
     setTimeout(() => {
         notifElement.textContent = '';
     }, 5000);
 }
 
 // Fungsi BARU untuk menampilkan detail anggota ketika kartu diklik
-function tampilkanDetailAnggota(nama, peran) {
-    // Mendapatkan elemen kartu yang diklik untuk mengambil kesan dan path gambar
-    const kartu = event.currentTarget;
-    const kesan = kartu.querySelector('.kesan').textContent;
-    const imgSrc = kartu.querySelector('.avatar-img').src;
+// Menerima elemen kartu yang diklik sebagai argumen pertama
+function tampilkanDetailAnggota(kartuElement, nama, peran) {
+    // Mengambil kesan dan path gambar dari elemen kartu yang diterima
+    const kesan = kartuElement.querySelector('.kesan').textContent;
+    const imgSrc = kartuElement.querySelector('.avatar-img').src;
     
     // Mengisi konten modal
     document.getElementById('modalImg').src = imgSrc;
