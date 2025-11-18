@@ -123,6 +123,8 @@ nav button:hover {
     display: block; 
 }
 
+/* ... (Bagian CSS di atasnya tetap sama) ... */
+
 /* Anggota Kelompok */
 .kelompok-info {
     text-align: center;
@@ -133,22 +135,22 @@ nav button:hover {
 
 .kartu-anggota-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Mengubah dari space-around menjadi center */
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px; /* Mengurangi jarak antar kartu */
 }
 
 .kartu-anggota {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
-    padding: 20px;
+    padding: 15px 10px; /* Mengurangi padding */
     border-radius: 10px;
-    width: 250px;
+    width: 180px; /* **PERUBAHAN UTAMA: Memperkecil lebar kartu** */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
-    margin-bottom: 10px; /* Jarak antar kartu */
-    cursor: pointer; /* Menambahkan kursor pointer untuk menunjukkan interaksi */
+    margin-bottom: 10px; 
+    cursor: pointer; 
 }
 
 .kartu-anggota:hover {
@@ -156,67 +158,43 @@ nav button:hover {
     background-color: #e9ecef;
 }
 
-.avatar-placeholder {
-    width: 80px;
-    height: 80px;
-    background-color: #007bff;
-    border-radius: 50%;
-    margin: 0 auto 15px;
+/* Styling untuk gambar avatar */
+.avatar-img {
+    width: 60px; /* **PERUBAHAN UTAMA: Memperkecil gambar avatar** */
+    height: 60px; /* **PERUBAHAN UTAMA: Memperkecil gambar avatar** */
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 0 auto 10px; /* Mengurangi margin bawah */
     border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff;
+    box-shadow: 0 0 0 3px #007bff; 
+}
+
+/* Styling khusus untuk gambar avatar mentor */
+.avatar-mentor-img {
+    box-shadow: 0 0 0 3px #00bcd4; 
 }
 
 .kartu-anggota h3 {
     color: #007bff;
     margin: 5px 0;
+    font-size: 1.1em; /* Memperkecil ukuran font */
 }
 
 .kartu-anggota .peran {
     color: #28a745;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Mengurangi margin bawah */
+    font-size: 0.9em; /* Memperkecil ukuran font */
 }
 
 .kartu-anggota .kesan {
-    font-size: 0.9em;
+    font-size: 0.8em; /* Memperkecil ukuran font */
     font-style: italic;
+    /* Memberikan tinggi tetap agar kartu tidak jiggling saat hover */
+    min-height: 40px; 
 }
 
-/* Styling Khusus untuk Kartu Mentor */
-.kartu-mentor {
-    background-color: #e0f7fa; /* Biru muda sekali */
-    border: 1px solid #00bcd4;
-    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
-}
-
-.kartu-mentor .avatar-placeholder {
-    background-color: #00bcd4; /* Biru terang untuk avatar mentor */
-    box-shadow: 0 0 0 3px #00bcd4;
-}
-
-.kartu-mentor h3 {
-    color: #00bcd4;
-}
-
-.kartu-mentor .peran {
-    color: #00838f; /* Biru gelap untuk peran mentor */
-}
-
-/* Styling untuk gambar avatar */
-.avatar-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
-    object-fit: cover; /* Memastikan gambar mengisi lingkaran tanpa terdistorsi */
-    margin: 0 auto 15px;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff; /* Warna shadow sama dengan avatar-placeholder */
-}
-
-/* Styling khusus untuk gambar avatar mentor */
-.avatar-mentor-img {
-    box-shadow: 0 0 0 3px #00bcd4; /* Warna shadow khusus untuk mentor */
-}
+/* ... (Styling Modal di bawahnya tetap sama, karena modal memang harus besar) ... */
 
 /* Footer */
 footer {
@@ -301,3 +279,4 @@ footer {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
