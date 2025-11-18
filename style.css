@@ -114,6 +114,14 @@ nav button:hover {
     border: 1px dashed #ccc;
 }
 
+.dokumentasi-img {
+    width: 100%;
+    height: 180px; /* Tinggi tetap untuk konsistensi */
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block; 
+}
 
 /* Anggota Kelompok */
 .kelompok-info {
@@ -222,4 +230,5 @@ footer {
     font-weight: bold;
     margin-top: 5px;
 }
+
 
