@@ -116,14 +116,12 @@ nav button:hover {
 
 .dokumentasi-img {
     width: 100%;
-    height: 180px; /* Tinggi tetap untuk konsistensi */
-    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+    height: 180px; 
+    object-fit: cover; 
     border-radius: 5px;
     margin-bottom: 10px;
     display: block; 
 }
-
-/* ... (Bagian CSS di atasnya tetap sama) ... */
 
 /* Anggota Kelompok */
 .kelompok-info {
@@ -135,17 +133,17 @@ nav button:hover {
 
 .kartu-anggota-container {
     display: flex;
-    justify-content: center; /* Mengubah dari space-around menjadi center */
+    justify-content: center; /* Diubah: tengah */
     flex-wrap: wrap;
-    gap: 15px; /* Mengurangi jarak antar kartu */
+    gap: 15px; /* Diubah: jarak lebih kecil */
 }
 
 .kartu-anggota {
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
-    padding: 15px 10px; /* Mengurangi padding */
+    padding: 15px 10px; /* Diubah: padding lebih kecil */
     border-radius: 10px;
-    width: 180px; /* **PERUBAHAN UTAMA: Memperkecil lebar kartu** */
+    width: 180px; /* Diubah: Lebar kartu lebih kecil */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
@@ -158,13 +156,23 @@ nav button:hover {
     background-color: #e9ecef;
 }
 
-/* Styling untuk gambar avatar */
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff;
+}
+
+/* Styling untuk gambar avatar (Diperkecil) */
 .avatar-img {
-    width: 60px; /* **PERUBAHAN UTAMA: Memperkecil gambar avatar** */
-    height: 60px; /* **PERUBAHAN UTAMA: Memperkecil gambar avatar** */
+    width: 60px; /* Diubah: Ukuran gambar lebih kecil */
+    height: 60px; /* Diubah: Ukuran gambar lebih kecil */
     border-radius: 50%; 
     object-fit: cover; 
-    margin: 0 auto 10px; /* Mengurangi margin bawah */
+    margin: 0 auto 10px; /* Diubah: Margin lebih kecil */
     border: 3px solid white;
     box-shadow: 0 0 0 3px #007bff; 
 }
@@ -177,24 +185,21 @@ nav button:hover {
 .kartu-anggota h3 {
     color: #007bff;
     margin: 5px 0;
-    font-size: 1.1em; /* Memperkecil ukuran font */
+    font-size: 1.1em; /* Diubah: Font lebih kecil */
 }
 
 .kartu-anggota .peran {
     color: #28a745;
     font-weight: bold;
-    margin-bottom: 5px; /* Mengurangi margin bawah */
-    font-size: 0.9em; /* Memperkecil ukuran font */
+    margin-bottom: 5px; /* Diubah: Margin lebih kecil */
+    font-size: 0.9em; /* Diubah: Font lebih kecil */
 }
 
 .kartu-anggota .kesan {
-    font-size: 0.8em; /* Memperkecil ukuran font */
+    font-size: 0.8em; /* Diubah: Font lebih kecil */
     font-style: italic;
-    /* Memberikan tinggi tetap agar kartu tidak jiggling saat hover */
-    min-height: 40px; 
+    min-height: 40px; /* Ditambahkan: untuk menjaga tinggi kartu */
 }
-
-/* ... (Styling Modal di bawahnya tetap sama, karena modal memang harus besar) ... */
 
 /* Footer */
 footer {
@@ -212,6 +217,7 @@ footer {
 }
 
 /* --- STYLING MODAL BARU --- */
+/* Catatan: Modal tetap besar agar gambar besar terlihat jelas */
 
 .modal {
     display: none; 
@@ -279,4 +285,3 @@ footer {
     font-weight: bold;
     margin-bottom: 15px;
 }
-
