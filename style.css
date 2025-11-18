@@ -236,15 +236,15 @@ footer {
 /* --- STYLING MODAL BARU --- */
 
 .modal {
-    display: none; /* Sembunyikan secara default */
-    position: fixed; /* Tetap di tempat */
-    z-index: 100; /* Berada di atas elemen lain (tinggi) */
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto; 
-    background-color: rgba(0,0,0,0.7); /* Latar belakang agak gelap */
+    background-color: rgba(0,0,0,0.7); 
     padding-top: 60px;
 }
 
@@ -254,7 +254,7 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 90%; 
-    max-width: 400px; /* Ukuran maksimal modal */
+    max-width: 400px; 
     border-radius: 10px;
     text-align: center;
     position: relative;
@@ -280,12 +280,12 @@ footer {
 }
 
 .gambar-besar-anggota {
-    width: 150px; /* Ukuran gambar yang diperbesar */
+    width: 150px; 
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px auto 20px;
-    border: 5px solid #007bff; /* Border biru yang menonjol */
+    border: 5px solid #007bff; 
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
