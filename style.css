@@ -99,8 +99,6 @@ nav button:hover {
     margin-bottom: 10px;
 }
 
-/* *Hapus atau abaikan .foto-placeholder karena sudah diganti tag <img>* */
-
 .dokumentasi-img {
     width: 100%;
     height: 180px; 
@@ -118,9 +116,11 @@ nav button:hover {
     color: #555;
 }
 
+/* KARTU ANGGOTA CONTAINER: EFEK SAF SALAT */
 .kartu-anggota-container {
     display: flex;
     justify-content: center;
+    align-items: flex-end; /* Efek "barisan salat": kartu sejajar di bawah */
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -136,6 +136,11 @@ nav button:hover {
     transition: transform 0.3s;
     margin-bottom: 10px; 
     cursor: pointer; 
+    
+    /* Tambahan untuk Saf Salat Vertikal */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .kartu-anggota:hover {
@@ -143,25 +148,27 @@ nav button:hover {
     background-color: #e9ecef;
 }
 
-.avatar-placeholder {
-    width: 60px; /* Ukuran placeholder disamakan dengan avatar-img */
-    height: 60px;
-    background-color: #007bff;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff;
-}
-
-/* Styling untuk gambar avatar (GAMBAR KECIL DI KARTU) */
+/* GAMBAR SEBELUM DIKLIK: UKURAN SEDANG (80px) */
 .avatar-img {
-    width: 60px; 
-    height: 60px; 
+    width: 80px; /* Ukuran SEDANG */
+    height: 80px; /* Ukuran SEDANG */
     border-radius: 50%; 
     object-fit: cover; 
     margin: 0 auto 10px; 
     border: 3px solid white;
     box-shadow: 0 0 0 3px #007bff; 
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 80px; /* Ukuran SEDANG */
+    height: 80px; /* Ukuran SEDANG */
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff;
+    flex-shrink: 0;
 }
 
 /* Styling khusus untuk gambar avatar mentor */
@@ -173,6 +180,12 @@ nav button:hover {
     color: #007bff;
     margin: 5px 0;
     font-size: 1.1em;
+    
+    /* Membantu layout Saf Salat */
+    flex-grow: 1; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .kartu-anggota .peran {
@@ -186,6 +199,7 @@ nav button:hover {
     font-size: 0.8em;
     font-style: italic;
     min-height: 40px;
+    margin-top: auto;
 }
 
 /* Footer */
@@ -249,15 +263,15 @@ footer {
     cursor: pointer;
 }
 
-/* GAMBAR BESAR DI MODAL */
+/* GAMBAR SETELAH DIKLIK: TANPA BORDER/SHADOW */
 .gambar-besar-anggota {
     width: 150px; 
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px auto 20px;
-    border: 5px solid #007bff; 
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    border: none; /* MENGHAPUS BORDER */
+    box-shadow: none; /* MENGHAPUS SHADOW */
 }
 
 #modalNama {
