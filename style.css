@@ -3,7 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    /* BACKGROUND GRADIENT SEPERTI YANG DIUSULKAN SEBELUMNYA */
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    background-attachment: fixed;
     color: #333;
 }
 
@@ -152,7 +154,7 @@ nav button:hover {
 .avatar-img {
     width: 80px; /* Ukuran SEDANG */
     height: 80px; /* Ukuran SEDANG */
-    border-radius: 50%; 
+    border-radius: 50%; /* Tetap lingkaran */
     object-fit: cover; 
     margin: 0 auto 10px; 
     border: 3px solid white;
@@ -263,15 +265,24 @@ footer {
     cursor: pointer;
 }
 
-/* GAMBAR SETELAH DIKLIK: TANPA BORDER/SHADOW */
+/*
+   ================================================
+   PERBAIKAN GAMBAR MODAL: TAMPIL FULL (NON-LINGKARAN)
+   ================================================
+*/
 .gambar-besar-anggota {
-    width: 150px; 
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: auto; 
+    height: auto;
+    max-width: 90%; /* Memastikan gambar tidak melebihi lebar modal */
+    max-height: 400px; /* Batasan tinggi agar tidak terlalu besar */
+    
+    border-radius: 0; /* MENGHAPUS BENTUK LINGKARAN, menjadi kotak/persegi panjang penuh */
+    object-fit: contain; /* Memastikan seluruh gambar ditampilkan tanpa terpotong */
     margin: 10px auto 20px;
+    
     border: none; /* MENGHAPUS BORDER */
     box-shadow: none; /* MENGHAPUS SHADOW */
+    display: block;
 }
 
 #modalNama {
