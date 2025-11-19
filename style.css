@@ -1,223 +1,209 @@
 /* Styling Dasar */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #007bff; /* Biru cerah */
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #007bff; /* Biru cerah */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+    margin: 0;
+    font-size: 2.5em;
 }
 
 header .badge-kelompok {
-    display: inline-block;
-    background-color: #28a745; /* Hijau */
-    color: white;
-    padding: 5px 15px;
-    margin-top: 10px;
-    border-radius: 20px;
-    font-weight: bold;
+    display: inline-block;
+    background-color: #28a745; /* Hijau */
+    color: white;
+    padding: 5px 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 /* Navigasi */
 nav {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #343a40; /* Abu-abu gelap */
+    text-align: center;
+    padding: 15px 0;
+    background-color: #343a40; /* Abu-abu gelap */
 }
 
 nav button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 nav button:hover {
-    background-color: #218838;
+    background-color: #218838;
 }
 
 /* Konten Seksi Umum */
 .konten-seksi {
-    padding: 40px;
-    margin: 20px auto;
-    max-width: 1000px; 
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1000px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .konten-seksi h2 {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* Dokumentasi (Galeri Lokasi) */
 .galeri-lokasi {
-    display: flex; 
-    gap: 20px; 
-    flex-wrap: wrap; 
-    justify-content: center; 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 .kartu-foto {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    width: 280px; 
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 280px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
 }
 
 .kartu-foto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .kartu-foto h3 {
-    color: #28a745;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    color: #28a745;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-.foto-placeholder {
-    width: 100%;
-    height: 180px;
-    background-color: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #6c757d;
-    font-size: 0.9em;
-    text-align: center;
-    border: 1px dashed #ccc;
-}
+/* *Hapus atau abaikan .foto-placeholder karena sudah diganti tag <img>* */
 
 .dokumentasi-img {
-    width: 100%;
-    height: 180px; 
-    object-fit: cover; 
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: block; 
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block; 
 }
 
 /* Anggota Kelompok */
 .kelompok-info {
-    text-align: center;
-    margin-bottom: 30px;
-    font-style: italic;
-    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #555;
 }
 
 .kartu-anggota-container {
-    display: flex;
-    justify-content: center; /* Diubah: tengah */
-    flex-wrap: wrap;
-    gap: 15px; /* Diubah: jarak lebih kecil */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .kartu-anggota {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 15px 10px; /* Diubah: padding lebih kecil */
-    border-radius: 10px;
-    width: 180px; /* Diubah: Lebar kartu lebih kecil */
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s;
-    margin-bottom: 10px; 
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    margin-bottom: 10px; 
     cursor: pointer; 
 }
 
 .kartu-anggota:hover {
-    transform: translateY(-7px);
-    background-color: #e9ecef;
+    transform: translateY(-7px);
+    background-color: #e9ecef;
 }
 
 .avatar-placeholder {
-    width: 80px;
-    height: 80px;
-    background-color: #007bff;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff;
+    width: 60px; /* Ukuran placeholder disamakan dengan avatar-img */
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff;
 }
 
-/* Styling untuk gambar avatar (Diperkecil) */
+/* Styling untuk gambar avatar (GAMBAR KECIL DI KARTU) */
 .avatar-img {
-    width: 60px; /* Diubah: Ukuran gambar lebih kecil */
-    height: 60px; /* Diubah: Ukuran gambar lebih kecil */
-    border-radius: 50%; 
-    object-fit: cover; 
-    margin: 0 auto 10px; /* Diubah: Margin lebih kecil */
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff; 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 0 auto 10px; 
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff; 
 }
 
 /* Styling khusus untuk gambar avatar mentor */
 .avatar-mentor-img {
-    box-shadow: 0 0 0 3px #00bcd4; 
+    box-shadow: 0 0 0 3px #00bcd4; 
 }
 
 .kartu-anggota h3 {
-    color: #007bff;
-    margin: 5px 0;
-    font-size: 1.1em; /* Diubah: Font lebih kecil */
+    color: #007bff;
+    margin: 5px 0;
+    font-size: 1.1em;
 }
 
 .kartu-anggota .peran {
-    color: #28a745;
-    font-weight: bold;
-    margin-bottom: 5px; /* Diubah: Margin lebih kecil */
-    font-size: 0.9em; /* Diubah: Font lebih kecil */
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
 }
 
 .kartu-anggota .kesan {
-    font-size: 0.8em; /* Diubah: Font lebih kecil */
-    font-style: italic;
-    min-height: 40px; /* Ditambahkan: untuk menjaga tinggi kartu */
+    font-size: 0.8em;
+    font-style: italic;
+    min-height: 40px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color: white;
-    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 40px;
 }
 
 #pesan-notifikasi {
-    color: #ffc107;
-    font-weight: bold;
-    margin-top: 5px;
+    color: #ffc107;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
-/* --- STYLING MODAL BARU --- */
-/* Catatan: Modal tetap besar agar gambar besar terlihat jelas */
+/* --- STYLING MODAL (POP-UP) --- */
 
 .modal {
     display: none; 
@@ -263,6 +249,7 @@ footer {
     cursor: pointer;
 }
 
+/* GAMBAR BESAR DI MODAL */
 .gambar-besar-anggota {
     width: 150px; 
     height: 150px;
