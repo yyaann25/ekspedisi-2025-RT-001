@@ -10,15 +10,30 @@ function tampilkanPesan(bagian) {
     }, 5000);
 }
 
-// Fungsi BARU untuk menampilkan detail anggota ketika kartu diklik
-// Menerima elemen kartu yang diklik sebagai argumen pertama
+// FUNGSI UTAMA YANG DIPERBAIKI: Mengambil info dari kartu yang diklik
 function tampilkanDetailAnggota(kartuElement, nama, peran) {
-    // Mengambil kesan dan path gambar dari elemen kartu yang diterima
-    const kesan = kartuElement.querySelector('.kesan').textContent;
-    const imgSrc = kartuElement.querySelector('.avatar-img').src;
     
+    // Mengambil Kesan
+    const kesan = kartuElement.querySelector('.kesan').textContent;
+    
+    // Mengambil Path Gambar
+    let imgSrc = '';
+    const modalImgElement = document.getElementById('modalImg');
+    const imgElement = kartuElement.querySelector('.avatar-img');
+    const placeholderElement = kartuElement.querySelector('.avatar-placeholder');
+    
+    if (imgElement) {
+        // Jika ada gambar (img), ambil src-nya dan tampilkan di modal
+        imgSrc = imgElement.src;
+        modalImgElement.src = imgSrc;
+        modalImgElement.style.display = 'block';
+    } else if (placeholderElement) {
+        // Jika hanya ada placeholder (seperti Althaf), sembunyikan slot gambar di modal
+        modalImgElement.style.display = 'none';
+        modalImgElement.src = ''; // Bersihkan src
+    }
+
     // Mengisi konten modal
-    document.getElementById('modalImg').src = imgSrc;
     document.getElementById('modalNama').textContent = nama;
     document.getElementById('modalPeran').textContent = peran;
     document.getElementById('modalKesan').textContent = kesan;
