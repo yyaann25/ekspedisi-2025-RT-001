@@ -1,58 +1,88 @@
 function tampilkanPesan(bagian) {
-    const notifElement = document.getElementById('pesan-notifikasi');
-    
-    let pesan = `Anda menuju bagian ${bagian}.`;
+    const notifElement = document.getElementById('pesan-notifikasi');
+    
+    let pesan = `Anda menuju bagian ${bagian}.`;
 
-    notifElement.textContent = pesan;
+    notifElement.textContent = pesan;
 
-    setTimeout(() => {
-        notifElement.textContent = '';
-    }, 5000);
+    setTimeout(() => {
+        notifElement.textContent = '';
+    }, 5000);
 }
 
-// FUNGSI UTAMA YANG DIPERBAIKI: Mengambil info dari kartu yang diklik
+// FUNGSI UNTUK MENAMPILKAN DETAIL ANGGOTA (TIDAK ADA PERUBAHAN SIGNIFIKAN)
 function tampilkanDetailAnggota(kartuElement, nama, peran) {
-    
-    // Mengambil Kesan
-    const kesan = kartuElement.querySelector('.kesan').textContent;
-    
-    // Mengambil Path Gambar
-    let imgSrc = '';
-    const modalElement = document.getElementById('modalDetailAnggota'); // Ambil elemen modal
-    const modalImgElement = document.getElementById('modalImg');
-    const imgElement = kartuElement.querySelector('.avatar-img');
-    const placeholderElement = kartuElement.querySelector('.avatar-placeholder');
-    
-    if (imgElement) {
-        // Jika ada gambar (img), ambil src-nya dan tampilkan di modal
-        imgSrc = imgElement.src;
-        modalImgElement.src = imgSrc;
-        modalImgElement.style.display = 'block';
-    } else if (placeholderElement) {
-        // Jika hanya ada placeholder (seperti Althaf), sembunyikan slot gambar di modal
-        modalImgElement.style.display = 'none';
-        modalImgElement.src = ''; // Bersihkan src
-    }
+    
+    // Mengambil Kesan
+    const kesan = kartuElement.querySelector('.kesan').textContent;
+    
+    // Menyiapkan elemen modal
+    const modalElement = document.getElementById('modalDetailAnggota');
+    const modalImgElement = document.getElementById('modalImg');
+    const imgElement = kartuElement.querySelector('.avatar-img');
+    
+    // Mengambil Path Gambar
+    if (imgElement) {
+        modalImgElement.src = imgElement.src;
+        modalImgElement.style.display = 'block'; // Tampilkan gambar avatar
+        modalImgElement.classList.remove('gambar-besar-lokasi'); // Hapus kelas lokasi jika ada
+        modalImgElement.classList.add('gambar-besar-anggota'); // Pastikan kelas anggota aktif
+    } else {
+        modalImgElement.style.display = 'none';
+        modalImgElement.src = '';
+    }
 
-    // Mengisi konten modal
-    document.getElementById('modalNama').textContent = nama;
-    document.getElementById('modalPeran').textContent = peran;
-    document.getElementById('modalKesan').textContent = kesan;
+    // Mengisi konten modal
+    document.getElementById('modalNama').textContent = nama;
+    document.getElementById('modalPeran').textContent = peran; // Peran/Jabatan
+    document.getElementById('modalKesan').textContent = kesan; // Kesan/Deskripsi Panjang
 
-    // Menampilkan modal MENGGUNAKAN CLASS BARU
-    modalElement.classList.add('modal-aktif');
+    // Menampilkan modal
+    modalElement.classList.add('modal-aktif');
 }
+
+// FUNGSI BARU UNTUK MENAMPILKAN DETAIL LOKASI/DOKUMENTASI
+function tampilkanDetailLokasi(kartuElement, nama, deskripsiPendek) {
+    
+    // Mengambil Deskripsi Panjang dari <p> di dalam kartu
+    const deskripsiPanjang = kartuElement.querySelector('.deskripsi-pendek').textContent;
+    
+    // Menyiapkan elemen modal
+    const modalElement = document.getElementById('modalDetailAnggota');
+    const modalImgElement = document.getElementById('modalImg');
+    const imgElement = kartuElement.querySelector('.dokumentasi-img');
+    
+    // Mengambil Path Gambar Dokumentasi
+    if (imgElement) {
+        modalImgElement.src = imgElement.src;
+        modalImgElement.style.display = 'block'; // Tampilkan gambar lokasi
+        modalImgElement.classList.remove('gambar-besar-anggota'); // Hapus kelas anggota
+        modalImgElement.classList.add('gambar-besar-lokasi'); // Tambahkan kelas khusus lokasi
+    } else {
+        modalImgElement.style.display = 'none';
+        modalImgElement.src = '';
+    }
+
+    // Mengisi konten modal
+    document.getElementById('modalNama').textContent = nama;
+    document.getElementById('modalPeran').textContent = deskripsiPendek; // Menggunakan peran untuk deskripsi pendek lokasi
+    document.getElementById('modalKesan').textContent = deskripsiPanjang; // Deskripsi panjang di bagian kesan
+
+    // Menampilkan modal
+    modalElement.classList.add('modal-aktif');
+}
+
 
 // Fungsi untuk menutup modal
 function tutupModal() {
-    const modalElement = document.getElementById('modalDetailAnggota');
-    modalElement.classList.remove('modal-aktif'); // Menyembunyikan modal MENGGUNAKAN CLASS BARU
+    const modalElement = document.getElementById('modalDetailAnggota');
+    modalElement.classList.remove('modal-aktif'); // Menyembunyikan modal
 }
 
 // Menutup modal ketika pengguna mengklik di luar konten modal
 window.onclick = function(event) {
-    const modal = document.getElementById('modalDetailAnggota');
-    if (event.target == modal) {
-        modal.classList.remove('modal-aktif');
-    }
+    const modal = document.getElementById('modalDetailAnggota');
+    if (event.target == modal) {
+        modal.classList.remove('modal-aktif');
+    }
 }
