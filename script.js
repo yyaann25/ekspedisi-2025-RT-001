@@ -1,56 +1,306 @@
-function tampilkanPesan(bagian) {
-    const notifElement = document.getElementById('pesan-notifikasi');
+/* Styling Dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     
-    let pesan = `Anda menuju bagian ${bagian}.`;
-
-    notifElement.textContent = pesan;
-
-    setTimeout(() => {
-        notifElement.textContent = '';
-    }, 5000);
+    /* BACKGROUND GRADIENT: Dari biru sangat muda ke putih */
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    background-attachment: fixed;
+    
+    color: #333;
 }
 
-// FUNGSI UTAMA YANG DIPERBAIKI: Mengambil info dari kartu yang diklik
-function tampilkanDetailAnggota(kartuElement, nama, peran) {
-    
-    // Mengambil Kesan
-    const kesan = kartuElement.querySelector('.kesan').textContent;
-    
-    // Mengambil Path Gambar
-    let imgSrc = '';
-    const modalImgElement = document.getElementById('modalImg');
-    const imgElement = kartuElement.querySelector('.avatar-img');
-    const placeholderElement = kartuElement.querySelector('.avatar-placeholder');
-    
-    if (imgElement) {
-        // Jika ada gambar (img), ambil src-nya dan tampilkan di modal
-        imgSrc = imgElement.src;
-        modalImgElement.src = imgSrc;
-        modalImgElement.style.display = 'block';
-    } else if (placeholderElement) {
-        // Jika hanya ada placeholder (seperti Althaf), sembunyikan slot gambar di modal
-        modalImgElement.style.display = 'none';
-        modalImgElement.src = ''; // Bersihkan src
-    }
-
-    // Mengisi konten modal
-    document.getElementById('modalNama').textContent = nama;
-    document.getElementById('modalPeran').textContent = peran;
-    document.getElementById('modalKesan').textContent = kesan;
-
-    // Menampilkan modal
-    document.getElementById('modalDetailAnggota').style.display = 'block';
+/* Header */
+header {
+    background-color: #007bff; /* Biru cerah */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-// Fungsi untuk menutup modal
-function tutupModal() {
-    document.getElementById('modalDetailAnggota').style.display = 'none';
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
 }
 
-// Menutup modal ketika pengguna mengklik di luar konten modal
-window.onclick = function(event) {
-    const modal = document.getElementById('modalDetailAnggota');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+header .badge-kelompok {
+    display: inline-block;
+    background-color: #28a745; /* Hijau */
+    color: white;
+    padding: 5px 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Navigasi */
+nav {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #343a40; /* Abu-abu gelap */
+}
+
+nav button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #218838;
+}
+
+/* Konten Seksi Umum */
+.konten-seksi {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1000px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.konten-seksi h2 {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Dokumentasi (Galeri Lokasi) */
+.galeri-lokasi {
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.kartu-foto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 280px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.kartu-foto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-foto h3 {
+    color: #28a745;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.dokumentasi-img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block; 
+}
+
+/* Anggota Kelompok */
+.kelompok-info {
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #555;
+}
+
+/* KARTU ANGGOTA CONTAINER: EFEK SAF SALAT */
+.kartu-anggota-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Efek "barisan salat": kartu sejajar di bawah */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.kartu-anggota {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    margin-bottom: 10px; 
+    cursor: pointer; 
+    
+    /* Tambahan untuk Saf Salat Vertikal */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.kartu-anggota:hover {
+    transform: translateY(-7px);
+    background-color: #e9ecef;
+}
+
+/* GAMBAR SEBELUM DIKLIK: UKURAN SEDANG (80px) */
+.avatar-img {
+    width: 80px; /* Ukuran SEDANG */
+    height: 80px; /* Ukuran SEDANG */
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 0 auto 10px; 
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff; 
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 80px; /* Ukuran SEDANG */
+    height: 80px; /* Ukuran SEDANG */
+    background-color: #007bff;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #007bff;
+    flex-shrink: 0;
+}
+
+/* Styling khusus untuk gambar avatar mentor */
+.avatar-mentor-img {
+    box-shadow: 0 0 0 3px #00bcd4; 
+}
+
+.kartu-anggota h3 {
+    color: #007bff;
+    margin: 5px 0;
+    font-size: 1.1em;
+    
+    /* Membantu layout Saf Salat */
+    flex-grow: 1; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.kartu-anggota .peran {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.kartu-anggota .kesan {
+    font-size: 0.8em;
+    font-style: italic;
+    min-height: 40px;
+    margin-top: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    margin-top: 40px;
+}
+
+#pesan-notifikasi {
+    color: #ffc107;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* --- STYLING MODAL (POP-UP) --- */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); 
+    padding-top: 60px;
+    
+    /* FIX: Hapus klik saat tersembunyi */
+    pointer-events: none; 
+}
+
+/* Kelas baru untuk menampilkan modal dan mengaktifkan klik */
+.modal-aktif {
+    display: block;
+    pointer-events: auto;
+}
+
+.modal-konten {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 400px; 
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.tutup-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    line-height: 1;
+}
+
+.tutup-modal:hover,
+.tutup-modal:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* GAMBAR SETELAH DIKLIK: TAMPIL FULL (NON-LINGKARAN) */
+.gambar-besar-anggota {
+    width: auto; 
+    height: auto;
+    max-width: 90%; 
+    max-height: 400px; 
+    
+    border-radius: 0; /* FOTO PENUH */
+    object-fit: contain; 
+    margin: 10px auto 20px;
+    
+    border: none; 
+    box-shadow: none; 
+    display: block;
+}
+
+#modalNama {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#modalPeran {
+    color: #28a745;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
