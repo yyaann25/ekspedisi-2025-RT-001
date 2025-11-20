@@ -16,7 +16,7 @@
 
     <nav>
         <button onclick="document.getElementById('pengertian').scrollIntoView({ behavior: 'smooth' })">Pengertian</button>
-        <button onclick="document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' })">Dokumentasi</button>
+        <button onclick="document.getElementById('rundown').scrollIntoView({ behavior: 'smooth' })">Rundown</button>         <button onclick="document.getElementById('dokumentasi').scrollIntoView({ behavior: 'smooth' })">Dokumentasi</button>
         <button onclick="document.getElementById('anggota-kelompok').scrollIntoView({ behavior: 'smooth' })">Anggota Kelompok</button>
     </nav>
 
@@ -26,8 +26,58 @@
         <p>📍 **Lokasi Tahun Ini:** Kota dan Kabupaten Malang, termasuk **Dusun Pujon Lor** untuk kegiatan observasi dan kemandirian, serta eksplorasi tempat-tempat bersejarah dan edukatif lainnya.</p>
     </section>
 
-    <section id="dokumentasi" class="konten-seksi">
-        <h2>📸 Galeri Perjalanan Kami di Malang</h2>
+    <section id="rundown" class="konten-seksi">
+        <h2>📅 Rundown Kegiatan (10 - 14 November 2025)</h2>
+        <div class="rundown-container">
+            
+            <div class="rundown-hari">
+                <h3>10 November: Pelepasan & Keberangkatan</h3>
+                <ul>
+                    <li>Pelepasan Ekspedisi.</li>
+                    <li>Keberangkatan stasiun Senen - Malang.</li>
+                </ul>
+            </div>
+            
+            <div class="rundown-hari">
+                <h3>11 November: Sejarah & Awal Pengabdian Desa</h3>
+                <ul>
+                    <li>Explorasi Museum Brawijaya.</li>
+                    <li>Explorasi Kampung Warna Warni & Tridi.</li>
+                    <li>Pembukaan di Balai Desa & Sapa Masyarakat.</li>
+                    <li>Games dan Edukasi anak-anak TPA.</li>
+                </ul>
+            </div>
+            
+            <div class="rundown-hari">
+                <h3>12 November: Penyuluhan & Interaksi</h3>
+                <ul>
+                    <li>Penyuluhan 7+1 Kebiasaan Anak Indonesia Hebat.</li>
+                    <li>Observasi dan sharing profesi community.</li>
+                    <li>BPJS (Bersih-bersih perkampungan jadi sehat).</li>
+                </ul>
+            </div>
+            
+            <div class="rundown-hari">
+                <h3>13 November: Eksplorasi & Perjalanan Pulang</h3>
+                <ul>
+                    <li>Closing Desa.</li>
+                    <li>Explorasi perkebunan apel.</li>
+                    <li>Museum Angkut Malang.</li>
+                    <li>Perjalanan pulang ke Jakarta (Stasiun Malang – Senen).</li>
+                </ul>
+            </div>
+            
+            <div class="rundown-hari">
+                <h3>14 November: Kepulangan</h3>
+                <ul>
+                    <li>Tiba di SMP Islam Plus Baitul Maal.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+        <section id="dokumentasi" class="konten-seksi">
+        <h2>📸 Galeri Perjalanan Kami di Malang</h2>
         
         <div class="galeri-lokasi">
             
@@ -72,7 +122,7 @@
     <hr>
     
     <section id="anggota-kelompok" class="konten-seksi">
-        <h2>👥 Anggota Kelompok RT 001</h2>
+                <h2>👥 Anggota Kelompok RT 001</h2>
         <p class="kelompok-info">Kami adalah Kelompok RT 001, tim yang bertanggung jawab penuh atas perencanaan, pelaksanaan, dan dokumentasi Ekspedisi Malang 2025.</p>
 
         <h3>Anggota Inti (Siswa)</h3>
@@ -162,10 +212,10 @@
         <p id="pesan-notifikasi"></p>
     </footer>
     
-        <div id="modalDetailAnggota" class="modal">
+    <div id="modalDetailAnggota" class="modal">
         <div class="modal-konten">
             <span class="tutup-modal" onclick="tutupModal()">&times;</span>
-                        <img id="modalImg" class="gambar-besar-anggota" src="" alt="Foto Detail">
+            <img id="modalImg" class="gambar-besar-anggota" src="" alt="Foto Detail">
             <h3 id="modalNama"></h3>
             <p id="modalPeran"></p>
             <p id="modalKesan"></p>
