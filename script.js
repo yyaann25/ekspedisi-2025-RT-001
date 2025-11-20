@@ -1,78 +1,86 @@
-function tampilkanPesan(bagian) {
-    const notifElement = document.getElementById('pesan-notifikasi');
-    
-    let pesan = `Anda menuju bagian ${bagian}.`;
+// Mengambil elemen-elemen modal
+const modal = document.getElementById('modalDetailAnggota');
+const modalImg = document.getElementById('modalImg');
+const modalNama = document.getElementById('modalNama');
+const modalPeran = document.getElementById('modalPeran');
+const modalKesan = document.getElementById('modalKesan');
+const notifikasi = document.getElementById('pesan-notifikasi');
 
-    notifElement.textContent = pesan;
+/**
+ * Fungsi untuk menampilkan detail anggota (saat klik kartu anggota).
+ * @param {HTMLElement} element - Kartu anggota yang diklik.
+ * @param {string} nama - Nama anggota.
+ * @param {string} peran - Peran anggota.
+ */
+function tampilkanDetailAnggota(element, nama, peran) {
+    const kesanElement = element.querySelector('.kesan');
+    const kesan = kesanElement ? kesanElement.textContent.trim() : "Tidak ada kesan khusus.";
+    const imgSrc = element.querySelector('.avatar-img').getAttribute('src');
 
-    setTimeout(() => {
-        notifElement.textContent = '';
-    }, 5000);
+    // Mengisi konten modal
+    modalImg.src = imgSrc;
+    modalImg.alt = "Foto " + nama;
+    // Menggunakan kelas khusus untuk gambar anggota
+    modalImg.classList.add('gambar-besar-anggota');
+    modalImg.classList.remove('gambar-besar-lokasi');
+
+    modalNama.textContent = nama;
+    modalPeran.textContent = peran;
+    modalKesan.textContent = kesan;
+
+    // Menampilkan modal dengan kelas baru
+    modal.classList.add('modal-aktif');
 }
 
-// FUNGSI UNTUK MENAMPILKAN DETAIL ANGGOTA
-function tampilkanDetailAnggota(kartuElement, nama, peran) {
-    
-    const kesan = kartuElement.querySelector('.kesan').textContent;
-    const modalElement = document.getElementById('modalDetailAnggota');
-    const modalImgElement = document.getElementById('modalImg');
-    const imgElement = kartuElement.querySelector('.avatar-img');
-    
-    if (imgElement) {
-        modalImgElement.src = imgElement.src;
-        modalImgElement.style.display = 'block'; 
-        modalImgElement.classList.remove('gambar-besar-lokasi');
-        modalImgElement.classList.add('gambar-besar-anggota'); // Aktifkan styling anggota (full foto)
-    } else {
-        modalImgElement.style.display = 'none';
-        modalImgElement.src = '';
-    }
+/**
+ * Fungsi untuk menampilkan detail lokasi (saat klik kartu foto).
+ * @param {HTMLElement} element - Kartu foto yang diklik.
+ * @param {string} nama - Nama lokasi.
+ * @param {string} deskripsi - Deskripsi lokasi.
+ */
+function tampilkanDetailLokasi(element, nama, deskripsi) {
+    const imgSrc = element.querySelector('.dokumentasi-img').getAttribute('src');
 
-    document.getElementById('modalNama').textContent = nama;
-    document.getElementById('modalPeran').textContent = peran; 
-    document.getElementById('modalKesan').textContent = kesan; 
+    // Mengisi konten modal
+    modalImg.src = imgSrc;
+    modalImg.alt = "Foto Lokasi " + nama;
+    // Menggunakan kelas khusus untuk gambar lokasi
+    modalImg.classList.add('gambar-besar-lokasi');
+    modalImg.classList.remove('gambar-besar-anggota'); 
 
-    // Menampilkan modal MENGGUNAKAN CLASS
-    modalElement.classList.add('modal-aktif');
-}
+    modalNama.textContent = nama;
+    modalPeran.textContent = deskripsi;
+    modalKesan.textContent = ""; // Kosongkan bagian kesan untuk detail lokasi
 
-// FUNGSI BARU UNTUK MENAMPILKAN DETAIL LOKASI/DOKUMENTASI
-function tampilkanDetailLokasi(kartuElement, nama, deskripsiPendek) {
-    
-    const deskripsiPanjang = kartuElement.querySelector('.deskripsi-pendek').textContent;
-    const modalElement = document.getElementById('modalDetailAnggota');
-    const modalImgElement = document.getElementById('modalImg');
-    const imgElement = kartuElement.querySelector('.dokumentasi-img');
-    
-    if (imgElement) {
-        modalImgElement.src = imgElement.src;
-        modalImgElement.style.display = 'block';
-        modalImgElement.classList.remove('gambar-besar-anggota'); // Hapus styling anggota
-        modalImgElement.classList.add('gambar-besar-lokasi'); // Aktifkan styling lokasi
-    } else {
-        modalImgElement.style.display = 'none';
-        modalImgElement.src = '';
-    }
-
-    document.getElementById('modalNama').textContent = nama;
-    document.getElementById('modalPeran').textContent = deskripsiPendek;
-    document.getElementById('modalKesan').textContent = deskripsiPanjang;
-
-    // Menampilkan modal MENGGUNAKAN CLASS
-    modalElement.classList.add('modal-aktif');
+    // Menampilkan modal dengan kelas baru
+    modal.classList.add('modal-aktif');
 }
 
 
-// Fungsi untuk menutup modal
+/**
+ * Fungsi untuk menutup modal.
+ */
 function tutupModal() {
-    const modalElement = document.getElementById('modalDetailAnggota');
-    modalElement.classList.remove('modal-aktif'); // Menyembunyikan modal
+    // Menyembunyikan modal dengan menghapus kelas aktif
+    modal.classList.remove('modal-aktif');
 }
 
-// Menutup modal ketika pengguna mengklik di luar konten modal
+// Menutup modal saat mengklik di luar area konten modal
 window.onclick = function(event) {
-    const modal = document.getElementById('modalDetailAnggota');
     if (event.target == modal) {
-        modal.classList.remove('modal-aktif');
+        tutupModal();
     }
 }
+
+// Fungsi notifikasi dummy (dapat dihapus jika tidak digunakan)
+function tampilkanNotifikasi(pesan) {
+    notifikasi.textContent = pesan;
+    setTimeout(() => {
+        notifikasi.textContent = '';
+    }, 3000);
+}
+
+// Tambahan: Contoh pemanggilan notifikasi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    tampilkanNotifikasi("Selamat datang di Website Ekspedisi Malang 2025!");
+});
