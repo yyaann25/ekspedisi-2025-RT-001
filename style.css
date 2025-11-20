@@ -1,148 +1,199 @@
 /* Styling Dasar */
+:root {
+    /* Palet Warna Tema Alam */
+    --warna-primer: #2E8B57; /* Hijau Laut Tua */
+    --warna-sekunder: #4CAF50; /* Hijau Daun */
+    --warna-aksen: #8BC34A; /* Hijau Limau */
+    --warna-biru-langit: #87CEEB; /* Biru Langit */
+    --warna-tanah: #A0522D; /* Coklat Tanah */
+    --warna-putih-bersih: #FFFFFF;
+    --warna-abu-terang: #F5F5F5;
+    --warna-text-gelap: #333333;
+    --warna-text-terang: #FFFFFF;
+
+    /* Font Tema */
+    --font-judul: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    
-    /* BACKGROUND GRADIENT: Dari biru sangat muda ke putih */
-    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+    background: linear-gradient(to bottom, var(--warna-biru-langit) 0%, var(--warna-putih-bersih) 50%, var(--warna-abu-terang) 100%);
     background-attachment: fixed;
-    
-    color: #333;
+    color: var(--warna-text-gelap);
 }
 
 /* Header */
 header {
-    background-color: #007bff; /* Biru cerah */
-    color: white;
-    padding: 20px 0; 
+    background-color: var(--warna-primer); /* Hijau Laut Tua */
+    color: var(--warna-text-terang);
+    padding: 30px 0; /* Tambah padding vertikal */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih dramatis */
     
     position: relative; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    min-height: 180px; /* Minimal tinggi header agar ada ruang untuk logo besar (140px + 20px margin atas + 20px margin bawah) */
+    min-height: 200px; /* Minimal tinggi header untuk logo besar dan jarak */
 }
 
 /* STYLING LOGO DENGAN UKURAN LEBIH BESAR DAN POSISI KIRI-KANAN */
 .header-logo {
-    width: 140px; /* Ukuran logo: 140px */
-    height: 140px; 
-    object-fit: contain;
-    background-color: white; 
-    padding: 5px;
+    width: 150px; /* Lebih besar lagi: 150px */
+    height: 150px; 
+    object-fit: cover; /* Gunakan cover agar gambar memenuhi area */
+    background-color: var(--warna-putih-bersih); 
+    padding: 8px; /* Padding lebih besar */
     border-radius: 50%;
     z-index: 10; 
+    border: 5px solid var(--warna-aksen); /* Border aksen hijau */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Bayangan pada logo */
     
     position: absolute; 
+    transition: transform 0.3s ease-in-out; /* Animasi hover */
+}
+
+.header-logo:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
 }
 
 .logo-kiri {
-    top: 20px; /* Jarak dari atas */
-    left: 20px; /* Jarak dari kiri */
+    top: 25px; /* Jarak dari atas */
+    left: 30px; /* Jarak dari kiri */
 }
 
 .logo-kanan {
-    top: 20px; /* Jarak dari atas */
-    right: 20px; /* Jarak dari kanan */
+    top: 25px; /* Jarak dari atas */
+    right: 30px; /* Jarak dari kanan */
 }
 /* AKHIR STYLING LOGO */
 
 /* Konten utama di header (teks SMP IP Baitul Maal dan EKSPEDISI MALANG 2025) */
 .header-content {
-    /* Memberi jarak atas agar tidak mepet dengan logo */
-    margin-top: 20px; 
-    margin-bottom: 10px; 
+    margin-top: 30px; /* Jarak atas lebih lega */
+    margin-bottom: 20px; /* Jarak bawah lebih lega */
+}
+
+header p { /* untuk "SMP IP BAITUL MAAL" */
+    font-family: var(--font-body);
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--warna-abu-terang);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em; /* Ukuran h1 diperbesar agar lebih dominan */
-    /* Padding dihilangkan karena logo diatur absolut, teks akan terpusat */
+    font-family: var(--font-judul);
+    margin: 10px 0;
+    font-size: 3.5em; /* Ukuran h1 jauh lebih besar */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Efek teks timbul */
+    letter-spacing: 2px;
 }
 
-header p {
-    margin: 5px 0;
+.tagline { /* Untuk "Mencetak Generasi Mandiri..." */
+    font-family: var(--font-body);
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 15px;
+    color: var(--warna-abu-terang);
 }
 
 header .badge-kelompok {
     display: inline-block;
-    background-color: #28a745; /* Hijau */
-    color: white;
-    padding: 5px 15px;
-    margin-top: 10px;
-    border-radius: 20px;
+    background-color: var(--warna-aksen); /* Hijau Limau */
+    color: var(--warna-text-terang);
+    padding: 8px 25px;
+    margin-top: 15px;
+    border-radius: 30px;
     font-weight: bold;
+    font-family: var(--font-judul);
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Navigasi */
 nav {
     text-align: center;
-    padding: 15px 0;
-    background-color: #343a40; /* Abu-abu gelap */
+    padding: 18px 0; /* Padding lebih besar */
+    background-color: var(--warna-sekunder); /* Hijau Daun */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--warna-aksen); /* Garis bawah aksen */
 }
 
 nav button {
-    background-color: #28a745;
-    color: white;
+    background-color: var(--warna-tanah); /* Coklat Tanah */
+    color: var(--warna-text-terang);
     border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
+    padding: 12px 25px; /* Ukuran tombol lebih besar */
+    margin: 0 12px;
+    border-radius: 30px; /* Bentuk tombol lebih bulat */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--font-judul);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 nav button:hover {
-    background-color: #218838;
+    background-color: darken(var(--warna-tanah), 10%); /* Gelapkan saat hover */
+    transform: translateY(-3px); /* Efek angkat saat hover */
 }
 
 /* Konten Seksi Umum */
 .konten-seksi {
-    padding: 40px;
-    margin: 20px auto;
+    padding: 60px 40px; /* Padding lebih besar */
+    margin: 30px auto; /* Margin lebih besar */
     max-width: 1000px; 
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: var(--warna-putih-bersih);
+    border-radius: 15px; /* Sudut lebih membulat */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih lembut */
 }
 
-.konten-seksi h2 {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+.section-title { /* Kelas baru untuk H2 */
+    font-family: var(--font-judul);
+    color: var(--warna-primer); /* Hijau Laut Tua */
+    border-bottom: 3px solid var(--warna-aksen); /* Garis bawah aksen */
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-align: center; /* Judul section di tengah */
 }
 
 /* -------------------- STYLING RUNDOWN BARU (VERTIKAL) -------------------- */
 .rundown-container {
-    /* Menghapus flex dan menggantinya dengan layout vertikal biasa */
     display: block; 
-    max-width: 700px; /* Batasi lebar container agar tidak terlalu lebar di layar besar */
+    max-width: 800px; /* Lebar container lebih besar */
     margin: 0 auto;
 }
 
 .rundown-hari {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    border-radius: 8px;
-    /* Menghapus width tetap, gunakan lebar penuh container */
+    background-color: var(--warna-abu-terang); /* Abu terang */
+    border: 1px solid lighten(var(--warna-sekunder), 20%); /* Border lebih terang */
+    padding: 25px;
+    border-radius: 10px;
     width: 100%; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-bottom: 15px; /* Memberi jarak antar hari */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px; /* Jarak antar hari lebih besar */
+    transition: transform 0.3s ease;
+}
+
+.rundown-hari:hover {
+    transform: translateY(-5px);
 }
 
 .rundown-hari h3 {
-    color: #007bff;
-    font-size: 1.3em; /* Ukuran lebih besar */
-    border-bottom: 2px solid #007bff; /* Garis pemisah lebih tebal */
-    padding-bottom: 10px;
+    font-family: var(--font-judul);
+    color: var(--warna-primer); /* Hijau Laut Tua */
+    font-size: 1.6em; 
+    border-bottom: 2px solid var(--warna-sekunder); /* Garis pemisah hijau daun */
+    padding-bottom: 12px;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .rundown-hari ul {
@@ -152,130 +203,128 @@ nav button:hover {
 }
 
 .rundown-hari ul li {
-    /* Menggunakan bullet point yang lebih jelas */
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="%2328a745"/></svg>') no-repeat left 6px;
-    padding-left: 25px;
-    line-height: 1.8;
-    font-size: 1em;
-    margin-bottom: 8px;
-    border-left: 3px solid #28a745; /* Garis vertikal di samping item */
-    padding-left: 15px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="%238BC34A"/></svg>') no-repeat left 8px; /* Bullet point aksen hijau */
+    padding-left: 30px; /* Padding lebih besar */
+    line-height: 2; /* Line height lebih besar */
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--warna-aksen); /* Garis vertikal aksen hijau */
+    padding-left: 20px;
     margin-left: 10px;
+    color: var(--warna-text-gelap);
 }
 /* ----------------------------------------------------------------- */
 
 /* Dokumentasi (Galeri Lokasi) */
 .galeri-lokasi {
     display: flex; 
-    gap: 20px; 
+    gap: 25px; /* Jarak antar kartu lebih besar */
     flex-wrap: wrap; 
     justify-content: center; 
 }
 
 .kartu-foto {
-    border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
-    width: 280px; 
+    border: 1px solid lighten(var(--warna-sekunder), 20%);
+    padding: 20px; /* Padding lebih besar */
+    border-radius: 12px; /* Sudut lebih membulat */
+    width: 300px; /* Ukuran kartu sedikit lebih besar */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: var(--warna-putih-bersih);
 }
 
 .kartu-foto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .kartu-foto h3 {
-    color: #28a745;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    font-family: var(--font-judul);
+    color: var(--warna-sekunder); /* Hijau Daun */
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
 }
 
 .dokumentasi-img {
     width: 100%;
-    height: 180px; 
+    height: 200px; /* Tinggi gambar lebih besar */
     object-fit: cover; 
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
     display: block; 
+    border: 2px solid var(--warna-aksen); /* Border aksen */
+}
+
+.deskripsi-pendek {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
 }
 
 /* Anggota Kelompok */
 .kelompok-info {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     font-style: italic;
-    color: #555;
+    color: #666;
+    font-size: 1.1em;
 }
 
-/* KARTU ANGGOTA CONTAINER: EFEK SAF SALAT */
 .kartu-anggota-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Efek "barisan salat": kartu sejajar di bawah */
+    align-items: flex-end; 
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px; /* Jarak antar kartu lebih besar */
 }
 
 .kartu-anggota {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 15px 10px;
-    border-radius: 10px;
-    width: 180px;
+    background-color: var(--warna-abu-terang);
+    border: 1px solid var(--warna-sekunder);
+    padding: 20px 15px; /* Padding lebih besar */
+    border-radius: 15px; /* Sudut lebih membulat */
+    width: 200px; /* Ukuran kartu lebih besar */
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s;
-    margin-bottom: 10px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px; 
     cursor: pointer; 
     
-    /* Tambahan untuk Saf Salat Vertikal */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .kartu-anggota:hover {
-    transform: translateY(-7px);
-    background-color: #e9ecef;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* GAMBAR SEBELUM DIKLIK: UKURAN SEDANG (80px) */
+/* GAMBAR SEBELUM DIKLIK: UKURAN SEDANG (90px) */
 .avatar-img {
-    width: 80px; /* Ukuran SEDANG */
-    height: 80px; /* Ukuran SEDANG */
+    width: 90px; /* Ukuran SEDANG diperbesar */
+    height: 90px; 
     border-radius: 50%; 
     object-fit: cover; 
-    margin: 0 auto 10px; 
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff; 
-    flex-shrink: 0;
-}
-
-.avatar-placeholder {
-    width: 80px; /* Ukuran SEDANG */
-    height: 80px; /* Ukuran SEDANG */
-    background-color: #007bff;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px #007bff;
+    margin: 0 auto 15px; /* Margin lebih besar */
+    border: 4px solid var(--warna-putih-bersih);
+    box-shadow: 0 0 0 4px var(--warna-primer); /* Warna border primer */
     flex-shrink: 0;
 }
 
 /* Styling khusus untuk gambar avatar mentor */
 .avatar-mentor-img {
-    box-shadow: 0 0 0 3px #00bcd4; 
+    box-shadow: 0 0 0 4px var(--warna-biru-langit); /* Border biru langit untuk mentor */
 }
 
 .kartu-anggota h3 {
-    color: #007bff;
-    margin: 5px 0;
-    font-size: 1.1em;
-    
-    /* Membantu layout Saf Salat */
+    font-family: var(--font-judul);
+    color: var(--warna-primer);
+    margin: 10px 0 5px;
+    font-size: 1.3em;
     flex-grow: 1; 
     display: flex;
     align-items: flex-end;
@@ -283,129 +332,54 @@ nav button:hover {
 }
 
 .kartu-anggota .peran {
-    color: #28a745;
+    color: var(--warna-sekunder);
     font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 0.9em;
+    margin-bottom: 8px;
+    font-size: 1em;
 }
 
 .kartu-anggota .kesan {
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-style: italic;
-    min-height: 40px;
+    min-height: 50px; /* Tinggi minimum lebih besar */
     margin-top: auto;
+    color: #666;
 }
+
+/* H3 untuk Mentor Pembimbing */
+section#anggota-kelompok h3:last-of-type { /* Selektor lebih spesifik */
+    font-family: var(--font-judul);
+    margin-top: 50px; 
+    border-bottom: 3px solid var(--warna-sekunder); 
+    padding-bottom: 12px;
+    color: var(--warna-primer);
+    text-align: center;
+    font-size: 1.8em;
+}
+
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #343a40;
-    color: white;
-    margin-top: 40px;
+    padding: 30px; /* Padding lebih besar */
+    background-color: var(--warna-primer); /* Hijau Laut Tua */
+    color: var(--warna-text-terang);
+    margin-top: 50px; /* Margin atas lebih besar */
+    box-shadow: 0 -8px 15px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-body);
 }
 
 #pesan-notifikasi {
-    color: #ffc107;
+    color: var(--warna-aksen); /* Kuning aksen */
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 /* --- STYLING MODAL (POP-UP) --- */
-
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 100; 
+    z-index: 1000; /* Z-index lebih tinggi */
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.7); 
-    padding-top: 60px;
-    
-    /* FIX: Hapus klik saat tersembunyi */
-    pointer-events: none; 
-}
-
-/* Kelas baru untuk menampilkan modal dan mengaktifkan klik */
-.modal-aktif {
-    display: block;
-    pointer-events: auto;
-}
-
-.modal-konten {
-    background-color: #fefefe;
-    margin: 5% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%; 
-    max-width: 400px; 
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.tutup-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    line-height: 1;
-}
-
-.tutup-modal:hover,
-.tutup-modal:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* GAMBAR SETELAH DIKLIK: TAMPIL FULL (NON-LINGKARAN) */
-.gambar-besar-anggota {
-    width: auto; 
-    height: auto;
-    max-width: 90%; 
-    max-height: 400px; 
-    
-    border-radius: 0; /* FOTO PENUH */
-    object-fit: contain; 
-    margin: 10px auto 20px;
-    
-    border: none; 
-    box-shadow: none; 
-    display: block;
-}
-
-/* Styling tambahan untuk gambar lokasi agar ukurannya lebih seragam */
-.gambar-besar-lokasi {
-    width: auto;
-    height: auto;
-    max-width: 95%;
-    max-height: 350px;
-    border-radius: 5px; /* Sedikit sudut tumpul */
-    object-fit: contain;
-    margin: 10px auto 20px;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-}
-
-
-#modalNama {
-    color: #007bff;
-    font-size: 1.8em;
-    margin-bottom: 5px;
-}
-
-#modalPeran {
-    color: #28a745;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
+    width
