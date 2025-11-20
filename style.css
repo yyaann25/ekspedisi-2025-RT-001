@@ -15,25 +15,59 @@ body {
 header {
     background-color: #007bff; /* Biru cerah */
     color: white;
-    padding: 30px 0;
+    padding: 20px; /* Padding sedikit lebih kecil agar logo bisa ke pojok */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    position: relative; /* Penting untuk penempatan logo absolut */
+    display: flex; /* Menggunakan flexbox untuk penataan item di header */
+    flex-direction: column; /* Mengatur item secara vertikal */
+    align-items: center; /* Pusatkan item secara horizontal */
 }
 
 /* STYLING BARU UNTUK LOGO DI HEADER */
 .header-logo {
-    width: 60px; /* Atur ukuran logo */
-    height: 60px;
+    width: 100px; /* Diperbesar dari 60px menjadi 100px */
+    height: 100px;
     object-fit: contain;
-    background-color: white; /* Memberi background putih agar logo yang mungkin transparan terlihat jelas */
+    background-color: white; 
     padding: 5px;
     border-radius: 50%;
+    
+    /* Pindah logo ke pojok kiri atas */
+    position: absolute; /* Menempatkan logo secara absolut */
+    top: 20px; /* Jarak dari atas */
+    left: 20px; /* Jarak dari kiri */
+    z-index: 10; /* Pastikan logo berada di atas elemen lain jika bertabrakan */
 }
 /* AKHIR STYLING LOGO */
 
+/* Konten di dalam div yang membungkus logo dan judul */
+header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    flex-direction: column; /* Mengatur judul dan p SMP IP secara vertikal */
+}
+
+/* Menyembunyikan logo yang ada di dalam flex container agar tidak duplikasi */
+header > div .header-logo {
+    display: none; 
+}
+
+
 header h1 {
     margin: 0;
-    font-size: 2em; /* Sedikit dikecilkan agar seimbang dengan logo */
+    font-size: 2.2em; /* Ukuran h1 sedikit lebih besar */
+    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
+    padding-right: 100px; /* Beri ruang jika ingin teks di tengah */
+}
+
+header p {
+    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
+    padding-right: 100px;
 }
 
 header .badge-kelompok {
@@ -44,6 +78,8 @@ header .badge-kelompok {
     margin-top: 10px;
     border-radius: 20px;
     font-weight: bold;
+    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
+    padding-right: 100px;
 }
 
 /* Navigasi */
