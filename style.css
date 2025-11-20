@@ -74,6 +74,46 @@ nav button:hover {
     margin-bottom: 20px;
 }
 
+/* -------------------- STYLING RUNDOWN BARU -------------------- */
+.rundown-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.rundown-hari {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.rundown-hari h3 {
+    color: #007bff;
+    font-size: 1.1em;
+    border-bottom: 1px dashed #ced4da;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.rundown-hari ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 0 0;
+}
+
+.rundown-hari ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="%2328a745"/></svg>') no-repeat left 6px;
+    padding-left: 18px;
+    line-height: 1.6;
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+/* ----------------------------------------------------------------- */
+
 /* Dokumentasi (Galeri Lokasi) */
 .galeri-lokasi {
     display: flex; 
@@ -292,6 +332,21 @@ footer {
     display: block;
 }
 
+/* Styling tambahan untuk gambar lokasi agar ukurannya lebih seragam */
+.gambar-besar-lokasi {
+    width: auto;
+    height: auto;
+    max-width: 95%;
+    max-height: 350px;
+    border-radius: 5px; /* Sedikit sudut tumpul */
+    object-fit: contain;
+    margin: 10px auto 20px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+
 #modalNama {
     color: #007bff;
     font-size: 1.8em;
@@ -304,4 +359,3 @@ footer {
     font-weight: bold;
     margin-bottom: 15px;
 }
-
