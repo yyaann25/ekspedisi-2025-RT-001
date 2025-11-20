@@ -15,60 +15,57 @@ body {
 header {
     background-color: #007bff; /* Biru cerah */
     color: white;
-    padding: 20px; /* Padding sedikit lebih kecil agar logo bisa ke pojok */
+    padding: 20px 0; 
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     
-    position: relative; /* Penting untuk penempatan logo absolut */
-    display: flex; /* Menggunakan flexbox untuk penataan item di header */
-    flex-direction: column; /* Mengatur item secara vertikal */
-    align-items: center; /* Pusatkan item secara horizontal */
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 180px; /* Minimal tinggi header agar ada ruang untuk logo besar (140px + 20px margin atas + 20px margin bawah) */
 }
 
-/* STYLING LOGO DENGAN UKURAN LEBIH BESAR DAN LEBIH POJOK */
+/* STYLING LOGO DENGAN UKURAN LEBIH BESAR DAN POSISI KIRI-KANAN */
 .header-logo {
-    width: 120px; /* Diperbesar dari 100px menjadi 120px */
-    height: 120px; /* Diperbesar dari 100px menjadi 120px */
+    width: 140px; /* Ukuran logo: 140px */
+    height: 140px; 
     object-fit: contain;
     background-color: white; 
     padding: 5px;
     border-radius: 50%;
-    
-    /* Pindah logo ke pojok kiri atas (hanya 10px dari tepi) */
-    position: absolute; 
-    top: 10px; /* Lebih menjorok ke atas (dari 20px menjadi 10px) */
-    left: 10px; /* Lebih menjorok ke kiri (dari 20px menjadi 10px) */
     z-index: 10; 
+    
+    position: absolute; 
+}
+
+.logo-kiri {
+    top: 20px; /* Jarak dari atas */
+    left: 20px; /* Jarak dari kiri */
+}
+
+.logo-kanan {
+    top: 20px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
 }
 /* AKHIR STYLING LOGO */
 
-/* Konten di dalam div yang membungkus logo dan judul */
-header > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 5px;
-    flex-direction: column; /* Mengatur judul dan p SMP IP secara vertikal */
+/* Konten utama di header (teks SMP IP Baitul Maal dan EKSPEDISI MALANG 2025) */
+.header-content {
+    /* Memberi jarak atas agar tidak mepet dengan logo */
+    margin-top: 20px; 
+    margin-bottom: 10px; 
 }
-
-/* Menyembunyikan logo yang ada di dalam flex container agar tidak duplikasi */
-header > div .header-logo {
-    display: none; 
-}
-
 
 header h1 {
     margin: 0;
-    font-size: 2.2em; /* Ukuran h1 dipertahankan */
-    /* Padding disesuaikan dengan ukuran logo baru (120px + margin 10px = 130px) */
-    padding-left: 140px; 
-    padding-right: 140px; 
+    font-size: 2.5em; /* Ukuran h1 diperbesar agar lebih dominan */
+    /* Padding dihilangkan karena logo diatur absolut, teks akan terpusat */
 }
 
 header p {
-    padding-left: 140px; 
-    padding-right: 140px;
+    margin: 5px 0;
 }
 
 header .badge-kelompok {
@@ -79,8 +76,6 @@ header .badge-kelompok {
     margin-top: 10px;
     border-radius: 20px;
     font-weight: bold;
-    padding-left: 140px; 
-    padding-right: 140px;
 }
 
 /* Navigasi */
