@@ -20,9 +20,20 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* STYLING BARU UNTUK LOGO DI HEADER */
+.header-logo {
+    width: 60px; /* Atur ukuran logo */
+    height: 60px;
+    object-fit: contain;
+    background-color: white; /* Memberi background putih agar logo yang mungkin transparan terlihat jelas */
+    padding: 5px;
+    border-radius: 50%;
+}
+/* AKHIR STYLING LOGO */
+
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2em; /* Sedikit dikecilkan agar seimbang dengan logo */
 }
 
 header .badge-kelompok {
