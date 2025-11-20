@@ -25,20 +25,20 @@ header {
     align-items: center; /* Pusatkan item secara horizontal */
 }
 
-/* STYLING BARU UNTUK LOGO DI HEADER */
+/* STYLING LOGO DENGAN UKURAN LEBIH BESAR DAN LEBIH POJOK */
 .header-logo {
-    width: 100px; /* Diperbesar dari 60px menjadi 100px */
-    height: 100px;
+    width: 120px; /* Diperbesar dari 100px menjadi 120px */
+    height: 120px; /* Diperbesar dari 100px menjadi 120px */
     object-fit: contain;
     background-color: white; 
     padding: 5px;
     border-radius: 50%;
     
-    /* Pindah logo ke pojok kiri atas */
-    position: absolute; /* Menempatkan logo secara absolut */
-    top: 20px; /* Jarak dari atas */
-    left: 20px; /* Jarak dari kiri */
-    z-index: 10; /* Pastikan logo berada di atas elemen lain jika bertabrakan */
+    /* Pindah logo ke pojok kiri atas (hanya 10px dari tepi) */
+    position: absolute; 
+    top: 10px; /* Lebih menjorok ke atas (dari 20px menjadi 10px) */
+    left: 10px; /* Lebih menjorok ke kiri (dari 20px menjadi 10px) */
+    z-index: 10; 
 }
 /* AKHIR STYLING LOGO */
 
@@ -60,14 +60,15 @@ header > div .header-logo {
 
 header h1 {
     margin: 0;
-    font-size: 2.2em; /* Ukuran h1 sedikit lebih besar */
-    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
-    padding-right: 100px; /* Beri ruang jika ingin teks di tengah */
+    font-size: 2.2em; /* Ukuran h1 dipertahankan */
+    /* Padding disesuaikan dengan ukuran logo baru (120px + margin 10px = 130px) */
+    padding-left: 140px; 
+    padding-right: 140px; 
 }
 
 header p {
-    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
-    padding-right: 100px;
+    padding-left: 140px; 
+    padding-right: 140px;
 }
 
 header .badge-kelompok {
@@ -78,8 +79,8 @@ header .badge-kelompok {
     margin-top: 10px;
     border-radius: 20px;
     font-weight: bold;
-    padding-left: 100px; /* Beri ruang agar tidak menabrak logo di pojok */
-    padding-right: 100px;
+    padding-left: 140px; 
+    padding-right: 140px;
 }
 
 /* Navigasi */
