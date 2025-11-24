@@ -17,6 +17,7 @@
 }
 
 body {
+    padding-top: 220px; /* Sesuaikan dengan tinggi header-mu */
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
@@ -27,18 +28,24 @@ body {
 
 /* Header */
 header {
-    background-color: var(--warna-primer); /* Hijau Laut Tua */
+    background-color: var(--warna-primer);
     color: var(--warna-text-terang);
-    padding: 30px 0; /* Tambah padding vertikal */
+    padding: 30px 0;
     text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih dramatis */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+    /* Tambahan untuk FIXED HEADER */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
     
-    position: relative; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    min-height: 200px; /* Minimal tinggi header untuk logo besar dan jarak */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
 }
 
 /* STYLING LOGO DENGAN UKURAN LEBIH BESAR DAN POSISI KIRI-KANAN */
@@ -383,3 +390,4 @@ footer {
     left: 0;
     top: 0;
     width
+
