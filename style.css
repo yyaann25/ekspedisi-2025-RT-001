@@ -17,7 +17,7 @@
 }
 
 body {
-    padding-top: 190px; /* Sesuaikan dengan tinggi header-mu */
+    padding-top: 100px; /* Sesuaikan dengan tinggi header-mu */
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
@@ -390,4 +390,5 @@ footer {
     left: 0;
     top: 0;
     width
+
 
