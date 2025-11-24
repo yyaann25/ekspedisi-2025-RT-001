@@ -6,9 +6,6 @@ const modalPeran = document.getElementById('modalPeran');
 const modalKesan = document.getElementById('modalKesan');
 const notifikasi = document.getElementById('pesan-notifikasi');
 
-/**
- * Fungsi untuk menampilkan detail anggota (saat klik kartu anggota).
- */
 function tampilkanDetailAnggota(element, nama, peran) {
     const kesanElement = element.querySelector('.kesan');
     const kesan = kesanElement ? kesanElement.textContent.trim() : "Tidak ada kesan khusus.";
@@ -26,9 +23,6 @@ function tampilkanDetailAnggota(element, nama, peran) {
     modal.classList.add('modal-aktif');
 }
 
-/**
- * Fungsi untuk menampilkan detail lokasi (saat klik kartu foto).
- */
 function tampilkanDetailLokasi(element, nama, deskripsi) {
     const imgSrc = element.querySelector('.dokumentasi-img').getAttribute('src');
 
@@ -44,21 +38,16 @@ function tampilkanDetailLokasi(element, nama, deskripsi) {
     modal.classList.add('modal-aktif');
 }
 
-/**
- * Fungsi untuk menutup modal.
- */
 function tutupModal() {
     modal.classList.remove('modal-aktif');
 }
 
-// Menutup modal saat mengklik di luar area konten modal
 window.onclick = function(event) {
     if (event.target == modal) {
         tutupModal();
     }
 };
 
-// Fungsi notifikasi dummy
 function tampilkanNotifikasi(pesan) {
     notifikasi.textContent = pesan;
     setTimeout(() => {
@@ -66,14 +55,11 @@ function tampilkanNotifikasi(pesan) {
     }, 3000);
 }
 
-// Notifikasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
     tampilkanNotifikasi("Selamat datang di Website Ekspedisi Malang 2025!");
+    sesuaikanPaddingBody();
 });
 
-/* ==================================================
-   FUNGSI BARU: Sesuaikan padding body otomatis
-   ================================================== */
 function sesuaikanPaddingBody() {
     const header = document.querySelector('header');
     if (header) {
@@ -82,8 +68,4 @@ function sesuaikanPaddingBody() {
     }
 }
 
-// Jalankan saat halaman dimuat
-document.addEventListener('DOMContentLoaded', sesuaikanPaddingBody);
-
-// Jalankan ulang saat layar berubah ukuran
 window.addEventListener('resize', sesuaikanPaddingBody);
